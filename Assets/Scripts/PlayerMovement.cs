@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -25,12 +26,15 @@ public class PlayerMovement : MonoBehaviour
     float invincibleTimer;
     public int health { get { return currentHealth; } }
 
+    public HealthBar healthBar;
+
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
         animator = GetComponent<Animator>();
     }
 
@@ -94,6 +98,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
+        healthBar.SetHealth(currentHealth);
         Debug.Log(currentHealth + "/" + maxHealth);
     }
 
