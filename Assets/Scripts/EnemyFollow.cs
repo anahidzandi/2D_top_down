@@ -53,6 +53,7 @@ public class EnemyFollow : MonoBehaviour
         if (distanceToPlayer <= minimumDistance)
         {
             //am.SetTrigger("Attack");
+            am.Play("ZombieAttack");
             // Attack code
             PlayerMovement controller = target.GetComponent<PlayerMovement>();
             controller.ChangeHealth(-amount);
