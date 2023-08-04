@@ -8,6 +8,7 @@ public class EnemyHealth : MonoBehaviour
     int currentHealth;
 
     public Animator animator;
+    private bool isDead;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +36,7 @@ public class EnemyHealth : MonoBehaviour
     void Die()
     {
         Debug.Log("Enemy died!");
+        isDead = true;
 
         //Play die Animation
         animator.SetBool("IsDead", true);
@@ -42,5 +44,10 @@ public class EnemyHealth : MonoBehaviour
         //Diasble enemy
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
+    }
+
+    public bool IsDead()
+    {
+        return isDead;
     }
 }
