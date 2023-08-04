@@ -8,6 +8,8 @@ public class PlayerAnimator : MonoBehaviour
     Animator am;
     PlayerMovement pm;
     SpriteRenderer sr;
+    public Transform attackPoint;
+    private Vector3 attackPointInitialLocalPosition;
 
 
     // Start is called before the first frame update
@@ -16,6 +18,8 @@ public class PlayerAnimator : MonoBehaviour
         am = GetComponent<Animator>();
         pm = GetComponent<PlayerMovement>();
         sr = GetComponent<SpriteRenderer>();
+
+        attackPointInitialLocalPosition = attackPoint.localPosition;
     }
 
     // Update is called once per frame
@@ -29,7 +33,9 @@ public class PlayerAnimator : MonoBehaviour
         else
         {
             am.SetBool("Move", false);
+            attackPoint.localPosition = attackPointInitialLocalPosition;
             SpriteDirectionChecker();
+
         }
     }
 
@@ -38,10 +44,12 @@ public class PlayerAnimator : MonoBehaviour
         if (pm.lastHorizontalVector < 0)
         {
             sr.flipX = true;
+            attackPoint.localPosition = new Vector3(-attackPointInitialLocalPosition.x, attackPointInitialLocalPosition.y, attackPointInitialLocalPosition.z);
         }
         else
         {
             sr.flipX = false;
+            attackPoint.localPosition = attackPointInitialLocalPosition;
         }
     }
 }

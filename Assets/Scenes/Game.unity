@@ -3468,6 +3468,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 79734090889969565, guid: 65d779cfcb56279468e5840a9d790868, type: 3}
+      propertyPath: attackPoint
+      value: 
+      objectReference: {fileID: 569657287}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65d779cfcb56279468e5840a9d790868, type: 3}
 --- !u!1001 &1810061221616502258
@@ -3483,7 +3487,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1810061220975441792, guid: a44c8ae8ba1676f4c9e574f314e768a7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.4952884
+      value: 4.3
       objectReference: {fileID: 0}
     - target: {fileID: 1810061220975441792, guid: a44c8ae8ba1676f4c9e574f314e768a7, type: 3}
       propertyPath: m_LocalPosition.y
